@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Amor</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -83,7 +83,7 @@
         }
         
         .counter-value {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 5px;
         }
@@ -205,10 +205,37 @@
             to { box-shadow: 0 5px 25px rgba(255, 154, 158, 0.7); }
         }
         
-        .love-footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            opacity: 0.8;
+        /* Frase estilizada */
+        .special-quote {
+            margin: 40px auto;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            position: relative;
+            max-width: 90%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .special-quote p {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        
+        .highlight {
+            font-weight: 700;
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            padding: 0 5px;
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 107, 107, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
         }
         
         .heart {
@@ -227,6 +254,12 @@
             100% { transform: scale(1); }
         }
         
+        .love-footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
         /* Responsividade */
         @media (max-width: 768px) {
             h1 {
@@ -239,20 +272,62 @@
             }
             
             .counter-value {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
             
             .carousel {
-                height: 300px;
+                height: 350px;
+                max-width: 90%;
             }
             
             .container {
-                padding: 20px;
+                padding: 20px 15px;
             }
             
             .love-quote {
                 font-size: 1rem;
                 max-width: 95%;
+            }
+            
+            .special-quote p {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .counter-container {
+                gap: 8px;
+            }
+            
+            .counter-item {
+                min-width: 70px;
+                padding: 8px;
+            }
+            
+            .counter-value {
+                font-size: 1.5rem;
+            }
+            
+            .counter-label {
+                font-size: 0.7rem;
+            }
+            
+            .carousel {
+                height: 280px;
+            }
+            
+            .special-quote {
+                padding: 15px;
+            }
+            
+            .special-quote p {
+                font-size: 1.3rem;
+            }
+            
+            .carousel-control {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -321,7 +396,8 @@
                 </div>
                 <div class="carousel-item">
                     <img src="Foto10.jpg" alt="Nosso amor">
-                </div>                
+                </div>
+                <!-- Adicione mais fotos conforme necessário -->
             </div>
             
             <div class="carousel-control prev">
@@ -334,8 +410,14 @@
             <div class="carousel-indicators">
                 <div class="carousel-indicator active"></div>
                 <div class="carousel-indicator"></div>
-                <div class="carousel-indicator"></div>                
+                <div class="carousel-indicator"></div>
+                <!-- Adicione mais indicadores conforme necessário -->
             </div>
+        </div>
+        
+        <!-- Frase Estilizada -->
+        <div class="special-quote">
+            <p>Quando a mulher do <span class="highlight">"Pode deixar que faço sozinha"</span> encontra um homem do <span class="highlight">"Eu sei que você dá conta, mas deixa eu te ajudar"</span> <span class="heart"><i class="fas fa-heart"></i></span></p>
         </div>
         
         <!-- Player de Música -->
@@ -347,13 +429,13 @@
         </div>
         
         <div class="love-footer">
-            Amor que cresce a cada dia <span class="heart"><i class="fas fa-heart"></i></span> Juntos para sempre
+            Amor que cresce a cada dia, nosso dia 17 <span class="heart"><i class="fas fa-heart"></i></span> Juntos para sempre
         </div>
     </div>
     
     <script>
         // Data do início do relacionamento
-        const dataInicio = new Date('2024-04-17T00:00:00');
+        const dataInicio = new Date('2024-02-17T00:00:00');
         
         function atualizarContador() {
             const agora = new Date();
